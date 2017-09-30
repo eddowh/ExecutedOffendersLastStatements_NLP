@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from constants import EXECUTED_OFFENDERS_URL, ARCHIVE_HTML_FILENAME
+from constants import EXECUTED_OFFENDERS_URL, ARCHIVE_HTML_FILENAME, DATAFRAME_FILENAME
 
 
 from bs4 import BeautifulSoup
 from datetime import datetime
 import pandas as pd
 import requests
+import feather
 
 
 def get_executed_offenders_html():
@@ -141,8 +142,9 @@ def get_df(eo_data, ls_data):
 def main():
     data = get_all_data()
     df = get_df(data['executed_offenders'], data['last_statements'])
-
     print(df)
+    # save on disk
+    feather.write_dataframe(df, DATAFRAME_FILENAME)
 
 
 if __name__ == '__main__':

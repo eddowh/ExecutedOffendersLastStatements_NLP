@@ -14,3 +14,9 @@ _html_filename = "DeathRowInformation_20170924.html"
 ARCHIVE_HTML_FILENAME = os.path.join(
     ARCHIVE_DIRNAME, _html_filename
 )
+
+_data_dirname = "data"
+DATA_DIRNAME = os.path.join(BASE_DIR, _data_dirname)
+
+_dataframe_filename = "executed_offenders_last_statements.dat"
+DATAFRAME_FILENAME = os.path.join(DATA_DIRNAME, _dataframe_filename)
