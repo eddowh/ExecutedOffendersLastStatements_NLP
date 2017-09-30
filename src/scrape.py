@@ -118,7 +118,7 @@ def get_offender_information_data(eo_data):
 
 
 def get_all_data():
-    executed_offenders_data = get_executed_offenders_data()[:10]
+    executed_offenders_data = get_executed_offenders_data()
     last_statements_data = get_last_statements_data(executed_offenders_data)
 
     return {
